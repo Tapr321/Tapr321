@@ -1,0 +1,12 @@
+function drawPlayerNames()
+    for _, player in ipairs(players) do
+        local playerName = player.name
+        local playerPosition = player.position
+
+        -- Calculate the position to display the name above the player
+        local namePosition = playerPosition + Vector3(0, 2, 0)
+
+        -- Draw the player name above the player
+        drawText(namePosition, playerName)
+    end
+end
