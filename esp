@@ -1,0 +1,24 @@
+-- Get all players in the game
+local players = game:GetService("Players"):GetPlayers()
+
+-- Loop through each player
+for _, player in ipairs(players) do
+    -- Create a highlight effect for the player
+    local highlight = Instance.new("SelectionBox")
+    highlight.Adornee = player.Character
+    highlight.Color3 = Color3.new(0, 1, 0) -- Green color
+    highlight.Transparency = 0.5
+    highlight.Parent = player.Character
+
+    -- Create a wall transparency effect for the player
+    local wallTransparency = Instance.new("SurfaceGui")
+    wallTransparency.Name = "WallTransparency"
+    wallTransparency.Parent = player.Character
+
+    -- Create a black frame to cover the player's view
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 1, 0)
+    frame.BackgroundColor3 = Color3.new(0, 0, 0) -- Black color
+    frame.BackgroundTransparency = 0.5
+    frame.Parent = wallTransparency
+end
